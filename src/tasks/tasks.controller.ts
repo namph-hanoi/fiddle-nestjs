@@ -57,9 +57,9 @@ export class TasksController {
     return this.tasksService.updateTaskById(id, status, user);
   }
 
-@Post('upload')
-@UseInterceptors(FileInterceptor('file'))
-uploadFile(@UploadedFile() file) {
-  console.log(file);
-}
+// @Post('upload')
+// @UseInterceptors(FileInterceptor('file'))
+// uploadFile(@UploadedFile() file) {
+//   console.log(file);
+// }
 }

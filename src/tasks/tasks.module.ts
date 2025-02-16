@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { MulterModule } from '@nestjs/platform-express';
+// import { MulterModule } from '@nestjs/platform-express';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from 'src/auth/auth.module';
 import { TaskRepository } from './task.repository';
@@ -10,9 +10,9 @@ import { TasksService } from './tasks.service';
   imports: [
     TypeOrmModule.forFeature([TaskRepository]),
     AuthModule,
-    MulterModule.register({
-      dest: '/upload',
-    })
+    // MulterModule.register({
+    //   dest: '/upload',
+    // })
   ],
   controllers: [TasksController],
   providers: [TasksService]

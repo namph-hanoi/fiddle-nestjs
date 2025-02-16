@@ -1,8 +1,0 @@
-db: 
-  host: '103.56.156.26'
-  username: 'postgres'
-  password: 'mysecretpassword'
-  synchronize: true
-
-jwt:
-    secret: 'defaultSecret'

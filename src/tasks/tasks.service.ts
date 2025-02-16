@@ -6,15 +6,15 @@ import { TaskRepository } from './task.repository';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Task } from './task.entity';
 import { User } from 'src/auth/user.entity';
-import { MulterModuleOptions, MulterOptionsFactory } from '@nestjs/platform-express';
-import { MulterOptions } from '@nestjs/platform-express/multer/interfaces/multer-options.interface';
+// import { MulterOptionsFactory } from '@nestjs/platform-express';
+// import { MulterOptions } from '@nestjs/platform-express/multer/interfaces/multer-options.interface';
 
 @Injectable()
 export class TasksService {
   constructor(
     @InjectRepository(TaskRepository)
     private taskRepository: TaskRepository,
-    private multerConfigService: MulterOptionsFactory
+    // private multerConfigService: MulterOptionsFactory
   ) {}
 
   async getTaskById(id: number, user: User): Promise<Task> {
@@ -49,8 +49,8 @@ export class TasksService {
     return this.taskRepository.getTasksFilter(getTasksFilterDto, user);
   };
 
-  createMulterOptions(): MulterModuleOptions {
+  // createMulterOptions(): MulterModuleOptions {
 
     
-  }
+  // }
 }

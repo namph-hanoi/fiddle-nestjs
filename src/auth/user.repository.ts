@@ -34,7 +34,7 @@ export class UserRepository extends Repository<User> {
   async validateInputPassword(authCredentialsDto: AuthCredentialsDto): Promise<string> {
     const { username, password } = authCredentialsDto;
 
-    const foundUser = await this.findOne({ username });
+    const foundUser = await this.findOne({ where: { username } });
 
     if (!foundUser) return null;
 
