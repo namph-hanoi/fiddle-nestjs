@@ -1,12 +1,11 @@
 import { Task } from './task.entity';
-import { EntityRepository, Repository } from 'typeorm';
+import { Repository } from 'typeorm';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { TaskStatus } from './task-status.enum';
 import { GetTasksFilterDto } from './dto/get-tasks-filter.dto';
 import { User } from 'src/auth/user.entity';
 import { InternalServerErrorException, Logger } from '@nestjs/common';
 
-@EntityRepository(Task)
 export class TaskRepository extends Repository<Task> {
 
   private logger = new Logger('TaskRepository')
